@@ -2,7 +2,6 @@ package org.spring_security.configs;
 
 import org.spring_security.models.Book;
 import org.spring_security.services.BookService;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
