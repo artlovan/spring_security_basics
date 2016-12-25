@@ -1,10 +1,17 @@
 package org.spring_security.models;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.context.annotation.Primary;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 
-@Repository
+@Entity
 public class Book {
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
     private String author;
@@ -13,8 +20,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(int id, String name, String author, int isbn) {
-        this.id = id;
+    public Book(String name, String author, int isbn) {
         this.name = name;
         this.author = author;
         this.isbn = isbn;
