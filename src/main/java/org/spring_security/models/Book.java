@@ -1,11 +1,9 @@
 package org.spring_security.models;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -14,6 +12,8 @@ public class Book {
     @GeneratedValue
     private int id;
     private String name;
+
+    @NotNull(message = "Author can not be null.")
     private String author;
     private int isbn;
 
